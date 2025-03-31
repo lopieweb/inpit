@@ -499,6 +499,36 @@
 				togglePlayButton1(false);
 			}
 		}
+$(document).ready(function () { // Auto-scroll setelah undangan dibuka $('#open-invitation').click(function () { $('#overlay').addClass('hide-overlay'); playAudio1();
+
+// Tambahkan animasi sidebar
+    $('.right-sidebar').addClass('animate');
+    
+    // Auto-scroll ke bagian utama setelah 1 detik
+    setTimeout(function () {
+        $('html, body').animate({ scrollTop: $('#main-content').offset().top }, 1000);
+    }, 1000);
+});
+
+// Fungsi scroll ke elemen tertentu
+function scrollToElement(el) {
+    $('html, body').animate({ scrollTop: $('#' + el).offset().top }, 1000);
+}
+
+// Responsive styles
+$(window).resize(function () {
+    if ($(window).width() < 768) {
+        $('.container').css('padding', '10px');
+        $('.right-sidebar').css('width', '100%');
+    } else {
+        $('.container').css('padding', '20px');
+        $('.right-sidebar').css('width', '300px');
+    }
+}).resize();
+
+});
+
+
 	</script>
 
 </body>
